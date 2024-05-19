@@ -35,12 +35,14 @@ func  _process(delta: float) -> void:
 	if not paused:
 		time -= delta
 
+
 func _on_edit_time_button_pressed() -> void:
 	edit_time_button.visible = false
 	time_input.visible = true
 	pause_button.disabled = true
 	time_input.time = "000000"
 	paused = true
+
 
 func _on_time_input_done(time: int) -> void:
 	time_input.visible = false
