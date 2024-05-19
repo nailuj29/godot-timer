@@ -36,6 +36,7 @@ label_settings = SubResource("LabelSettings_00bk2")
 layout_mode = 2
 
 [node name="PauseButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Pause"
@@ -59,5 +60,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/EditTimeButton" to="." method="_on_edit_time_button_pressed"]
 [connection signal="done" from="CenterContainer/VBoxContainer/TimeInput" to="." method="_on_time_input_done"]
