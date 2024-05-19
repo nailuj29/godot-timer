@@ -3,13 +3,15 @@ class_name TimeInput
 
 signal done(time: int)
 
-var time: String = "000000"
+var time: String = "000000":
+	set(value):
+		time = value
+		time_label.text = time.substr(0, 2) + ":" + time.substr(2, 2) + ":" + time.substr(4, 2)
 
 @onready var time_label: Label = %TimeLabel
 
 func add_num(num: String):
 	time = (time + num).substr(len(num))
-	time_label.text = time.substr(0, 2) + ":" + time.substr(2, 2) + ":" + time.substr(4, 2)
 
 
 func _on_cancel_button_pressed() -> void:
