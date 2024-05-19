@@ -16,7 +16,8 @@ script = ExtResource("1_2u8du")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="TimeLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "00:00:00"
 label_settings = SubResource("LabelSettings_gfwpv")
@@ -79,9 +80,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "3"
 
-[node name="DoneButton" type="Button" parent="VBoxContainer/GridContainer"]
+[node name="CancelButton" type="Button" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "✓"
+text = "X"
 
 [node name="0Button" type="Button" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -96,8 +97,20 @@ size_flags_vertical = 3
 text = "00
 "
 
-[node name="CancelButton" type="Button" parent="VBoxContainer"]
+[node name="DoneButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Cancel"
+text = "Done"
 
-[connection signal="pressed" from="VBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/7Button" to="." method="_on_7button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/8Button" to="." method="_on_8button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/9Button" to="." method="_on_9button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/4Button" to="." method="_on_4button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/5Button" to="." method="_on_5button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/6Button" to="." method="_on_6button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/1Button" to="." method="_on_1button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/2Button" to="." method="_on_2button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/3Button" to="." method="_on_3button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/0Button" to="." method="_on_0button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/00Button" to="." method="_on_00button_pressed"]
+[connection signal="pressed" from="VBoxContainer/DoneButton" to="." method="_on_done_button_pressed"]
