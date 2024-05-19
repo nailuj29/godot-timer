@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr7yb2kfmd3u1"]
+[gd_scene load_steps=4 format=3 uid="uid://dr7yb2kfmd3u1"]
 
+[ext_resource type="Script" path="res://timer.gd" id="1_22iob"]
 [ext_resource type="PackedScene" uid="uid://3oo2g7dj6p3r" path="res://time_input.tscn" id="1_vnrgk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00bk2"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_22iob")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -47,9 +49,14 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="EditTimeButton" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Change Time"
 
 [node name="TimeInput" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_vnrgk")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/EditTimeButton" to="." method="_on_edit_time_button_pressed"]
+[connection signal="done" from="CenterContainer/VBoxContainer/TimeInput" to="." method="_on_time_input_done"]
