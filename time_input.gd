@@ -19,11 +19,11 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_done_button_pressed() -> void:
-	var hours = int(time.substr(0, 2))
-	var minutes = int(time.substr(2, 2))
+	var hours := int(time.substr(0, 2))
+	var minutes := int(time.substr(2, 2))
 	if minutes > 59:
 		minutes = 59
-	var seconds = int(time.substr(4, 2))
+	var seconds := int(time.substr(4, 2))
 	if seconds > 59:
 		seconds = 59
 	
