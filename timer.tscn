@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr7yb2kfmd3u1"]
+[gd_scene load_steps=3 format=3 uid="uid://dr7yb2kfmd3u1"]
+
+[ext_resource type="PackedScene" uid="uid://3oo2g7dj6p3r" path="res://time_input.tscn" id="1_vnrgk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00bk2"]
 font_size = 64
@@ -44,13 +46,10 @@ text = "Reset"
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="Node" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="EditTimeButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+text = "Change Time"
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Node"]
+[node name="TimeInput" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_vnrgk")]
+visible = false
 layout_mode = 2
-text = "Edit time:"
-
-[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer/Node"]
-layout_mode = 2
-placeholder_text = "00:00:00"
