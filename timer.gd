@@ -5,6 +5,7 @@ extends Control
 @onready var time_label: Label = %TimeLabel
 @onready var pause_button: Button = %PauseButton
 
+var original_time := 120.0
 var time: float = 0:
 	set(value):
 		if value >= 0:
@@ -50,8 +51,13 @@ func _on_time_input_done(time: int) -> void:
 	pause_button.disabled = false
 	paused = false
 	if (time != -1):
+		original_time = time
 		self.time = time
 
 
 func _on_pause_button_pressed() -> void:
 	paused = not paused
+
+
+func _on_reset_button_pressed() -> void:
+	time = original_time
