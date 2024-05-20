@@ -6,11 +6,11 @@ extends Control
 @onready var pause_button: Button = %PauseButton
 
 var original_time := 120.0
-var time: float = 0:
+var time: float = 120.0:
 	set(value):
 		if value >= 0:
 			time = value
-			var int_time := int(time)
+			var int_time := int(ceil(time))
 			var hours: int = floor(int_time / (60 * 60))
 			var left := int_time % (60 * 60)
 			var minutes: int = floor(left / 60)
