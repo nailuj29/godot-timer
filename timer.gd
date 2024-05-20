@@ -4,6 +4,7 @@ extends Control
 @onready var time_input: TimeInput = %TimeInput
 @onready var time_label: Label = %TimeLabel
 @onready var pause_button: Button = %PauseButton
+@onready var alarm_player: AudioStreamPlayer = $AlarmPlayer
 
 var original_time := 120.0
 var time: float = 120.0:
@@ -35,6 +36,10 @@ var paused := false:
 func  _process(delta: float) -> void:
 	if not paused:
 		time -= delta
+		
+	if time == 0 and not alarm_player.playing:
+		alarm_player.play()
+		pause_button.disabled = true
 
 
 func _on_edit_time_button_pressed() -> void:
@@ -61,3 +66,5 @@ func _on_pause_button_pressed() -> void:
 
 func _on_reset_button_pressed() -> void:
 	time = original_time
+	pause_button.disabled = false
+	alarm_player.stop()

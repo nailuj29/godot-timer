@@ -61,7 +61,7 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AlarmPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_tgw6j")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
