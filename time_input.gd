@@ -29,6 +29,30 @@ func _on_done_button_pressed() -> void:
 	
 	done.emit(hours * 60 * 60 + minutes * 60 + seconds)
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.pressed and not event.echo:
+			match event.keycode:
+				KEY_0, KEY_KP_0:
+					add_num("0")
+				KEY_1, KEY_KP_1:
+					add_num("1")
+				KEY_2, KEY_KP_2:
+					add_num("2")
+				KEY_3, KEY_KP_3:
+					add_num("3")
+				KEY_4, KEY_KP_4:
+					add_num("4")
+				KEY_5, KEY_KP_5:
+					add_num("5")
+				KEY_6, KEY_KP_6:
+					add_num("6")
+				KEY_7, KEY_KP_7:
+					add_num("7")
+				KEY_8, KEY_KP_8:
+					add_num("8")
+				KEY_9, KEY_KP_9:
+					add_num("9")
 
 func _on_1button_pressed() -> void:
 	add_num("1")
