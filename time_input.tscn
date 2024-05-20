@@ -94,8 +94,7 @@ text = "0"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "00
-"
+text = "00"
 
 [node name="DoneButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
