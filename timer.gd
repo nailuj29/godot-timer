@@ -50,7 +50,7 @@ func _on_time_input_done(time: int) -> void:
 	edit_time_button.visible = true
 	pause_button.disabled = false
 	paused = false
-	if (time != -1):
+	if (time > 0):
 		original_time = time
 		self.time = time
 
